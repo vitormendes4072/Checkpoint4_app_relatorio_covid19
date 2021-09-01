@@ -1,7 +1,9 @@
 import React from 'react';
 import Data from './dados_covid.json';
 import Footer from './Footer';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 
 const App = () =>{
   return (
@@ -14,7 +16,9 @@ const App = () =>{
       <View style={styles.body}>
         { Data.map(post => {
           return(
-            <View key={post.id} style={styles.view}>
+            <TouchableOpacity 
+            
+            key={post.id} style={styles.view}>
               
               <ScrollView style={{marginBottom: 10, marginTop: 10}}>
                 
@@ -28,7 +32,7 @@ const App = () =>{
               
               </ScrollView>
             
-            </View>
+            </TouchableOpacity>
           )
         }) }
       </View>
